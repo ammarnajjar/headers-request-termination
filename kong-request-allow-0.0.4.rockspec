@@ -1,10 +1,10 @@
 package = "kong-request-allow"
 
-version = "0.0.3-1"
+version = "0.0.4-1"
 
 source = {
   url = "git://github.com/ammarnajjar/kong-request-allow",
-  tag = "v0.0.3",
+  tag = "v0.0.4",
 }
 
 description = {
