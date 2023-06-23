@@ -10,20 +10,16 @@ local DEFAULT_RESPONSE = {
 	[503] = "Service unavailable",
 }
 
-
 local RequestTerminationHandler = {}
-
 
 RequestTerminationHandler.PRIORITY = 2
 RequestTerminationHandler.VERSION = kong_meta.version
-
 
 function RequestTerminationHandler:access(conf)
 	local status  = conf.status_code
 	local content = conf.body
 	local req_headers, req_query
 
-	-- trigger = "SECRET"
 	if conf.trigger_key or conf.trigger_value or conf.echo then
 		req_headers = kong.request.get_headers()
 		req_query = kong.request.get_query()
@@ -31,7 +27,7 @@ function RequestTerminationHandler:access(conf)
 		if (conf.trigger_key and conf.trigger_value)
 			and (req_headers[conf.trigger_key] == conf.trigger_value
 				or req_query[conf.trigger_key] == conf.trigger_value) then
-			return -- trigger set but not found, nothing to do
+			return -- trigger key value pair is not found, nothing to do
 		end
 	end
 
