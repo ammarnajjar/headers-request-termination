@@ -1,6 +1,6 @@
 package = "kong-request-allow"
 
-version = "0.0.1"
+version = "0.0.1-1"
 
 source = {
   url = "git://github.com/ammarnajjar/kong-request-allow",
