@@ -1,2 +1,3 @@
-# headers-request-termination
-Kong: Block requests if headers do not match
+# kong-request-allow
+
+Kong plugin: Allow requests based on trigger key,value pair in headers or query.
