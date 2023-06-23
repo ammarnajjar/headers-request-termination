@@ -27,6 +27,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          build-args: |
+            KONG_VERSION=3.1.1-alpine
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
