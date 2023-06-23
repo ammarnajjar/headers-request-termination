@@ -24,22 +24,34 @@ return {
             },
           },
           { message = { description = "The message to send, if using the default response generator.", type = "string" }, },
-          { content_type = { description = "Content type of the raw response configured with `config.body`.",
-            type = "string" }, },
           {
-              body = {
+            content_type = {
+              description = "Content type of the raw response configured with `config.body`.",
+              type = "string"
+            },
+          },
+          {
+            body = {
               description = "The raw response body to send. This is mutually exclusive with the `config.message` field.",
-              type = "string" }, },
+              type = "string"
+            },
+          },
           {
-              echo = {
+            echo = {
               description =
               "When set, the plugin will echo a copy of the request back to the client. The main usecase for this is debugging. It can be combined with `trigger` in order to debug requests on live systems without disturbing real traffic.",
-              type = "boolean", required = true, default = false }, },
+              type = "boolean",
+              required = true,
+              default = false
+            },
+          },
           {
-              trigger_key = {
+            trigger_key = {
               description = "when set, the plugin allows requests which contains key, value pair in headers or in query.",
-              type = "string" }, },
-          { trigger_value = { description = "coupled with trigger_key", type = "string" }, }
+              type = "string"
+            },
+          },
+          { trigger_value = { description = "coupled with trigger_key", type = "string" }, },
         },
         custom_validator = function(config)
           if (is_present(config.trigger_key) and not is_present(config.trigger_value)) or
