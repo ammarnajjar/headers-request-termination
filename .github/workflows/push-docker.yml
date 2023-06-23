@@ -30,5 +30,7 @@ jobs:
           build-args: |
             KONG_VERSION=3.1.1-alpine
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            najjarammar/kong:3.1.1
+            najjarammar/kong:latest
           labels: ${{ steps.meta.outputs.labels }}

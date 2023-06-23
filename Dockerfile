@@ -1,6 +1,6 @@
 ARG KONG_VERSION
 
-FROM --platform=linux/amd64 kong:${KONG_VERSION}
+FROM kong:${KONG_VERSION}
 USER root
 
 RUN apk add \
