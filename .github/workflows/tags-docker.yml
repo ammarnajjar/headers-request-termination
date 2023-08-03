@@ -1,6 +1,9 @@
 name: Publish Docker image
 
-on: [push]
+on:
+  push:
+    tags:
+      - '**'
 
 jobs:
   push_to_registry:
@@ -8,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        kong_version: [3.3.1-alpine, alpine]
+        kong_version: [3.1.1-alpine, 3.2.2-alpine, 3.3.0-alpine, alpine]
 
     steps:
       - name: Check out the repo
