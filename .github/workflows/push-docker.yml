@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        kong_version: [3.3.1-alpine, alpine]
+        kong_version: [3.4.0-alpine, alpine]
 
     steps:
       - name: Check out the repo
